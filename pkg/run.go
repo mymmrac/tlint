@@ -30,7 +30,7 @@ func Run(ctx *cli.Context) error {
 	// //// //// //
 
 	if cfg.TLint.Dir == "" {
-		cfg.TLint.Dir = ".tlint"
+		cfg.TLint.Dir = "./.tlint.yaml"
 	}
 	if err = os.Mkdir(cfg.TLint.Dir, os.ModePerm); err != nil && !errors.Is(err, os.ErrExist) {
 		return fmt.Errorf("internal dir: %w", err)
@@ -117,7 +117,8 @@ func Run(ctx *cli.Context) error {
 		}
 		log.Debugf("Using binary from: %q", cfg.GolangCILint.URL)
 	default:
-		return fmt.Errorf("no golangci-lint install method found")
+		cmdName = "golangci-lint"
+		log.Debugf("Using local cmd (fallback): %q", cmdName)
 	}
 
 	// //// //// //
