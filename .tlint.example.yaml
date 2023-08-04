@@ -1,0 +1,27 @@
+# TLint config
+tlint:
+  # Internal files directory
+  dir: ".tlint"
+
+# Where to get config file
+config:
+  # From file on disk
+  file: "~/config/.golangci.yaml"
+  # From URL
+  url: "https://example.com/.golangci.yaml"
+
+# How to install golangci-lint
+golangci-lint:
+  # Installed locally
+  local: true
+  # Use system binary
+  file: "/usr/bin/golangci-lint"
+  # Get binary from URL
+  url: "https://example.com/golangci-lint"
+
+# Override global config
+override:
+  # Options for analysis running.
+  run:
+    # The default concurrency value is the number of available CPU.
+    concurrency: 4
