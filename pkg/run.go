@@ -30,7 +30,7 @@ func Run(ctx *cli.Context) error {
 	// //// //// //
 
 	if cfg.TLint.Dir == "" {
-		cfg.TLint.Dir = "./.tlint.yaml"
+		cfg.TLint.Dir = ".tlint"
 	}
 	if err = os.Mkdir(cfg.TLint.Dir, os.ModePerm); err != nil && !errors.Is(err, os.ErrExist) {
 		return fmt.Errorf("internal dir: %w", err)

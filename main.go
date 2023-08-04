@@ -34,7 +34,7 @@ func main() {
 			&cli.PathFlag{
 				Name:    "config",
 				Usage:   "config file path",
-				Value:   ".tling.yaml",
+				Value:   ".tlint.yaml",
 				Aliases: []string{"c"},
 			},
 		},
